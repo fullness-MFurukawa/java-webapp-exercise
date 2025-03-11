@@ -9,6 +9,7 @@
 2. Taglibディレクティブのuri属性を以下に変更
 <table border="1">
   <tr><th>Name</th><th>TagLib</th></tr>
-  <tr><th>core</th><th>  <%@ taglib prefix="c" uri="jakarta.tags.core" %> <tr>
-  
+  <tr><th>core</th><th> <%@ taglib prefix="c" uri="jakarta.tags.core" %> <tr>
+  <tr><th>fmt</th><th>  <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %> <tr>
+  <tr><th>functions</th><th>  <%@ taglib prefix="fn" uri="jakarta.tags.functions" %> <tr>
 </table>
