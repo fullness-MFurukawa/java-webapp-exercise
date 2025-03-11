@@ -13,3 +13,5 @@
   <tr><th>fmt</th><th>  <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %> <tr>
   <tr><th>functions</th><th>  <%@ taglib prefix="fn" uri="jakarta.tags.functions" %> <tr>
 </table>
+2. ドキュメントURL
+  - https://jakarta.ee/specifications/tags/3.0/tagdocs/
