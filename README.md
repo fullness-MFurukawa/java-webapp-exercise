@@ -8,8 +8,7 @@
   - jakarta.servlet.jsp.jstl-api-3.0.2.jar
 2. Taglibディレクティブのuri属性を以下に変更
 <table border="1">
-  <tr>
-    <th>Name</th>
-    <th>TagLib</th>
-  </tr>
+  <tr><th>Name</th><th>TagLib</th></tr>
+  <tr><th>core</th><th>  <%@ taglib prefix="c" uri="jakarta.tags.core" %> <tr>
+  
 </table>
