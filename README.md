@@ -6,3 +6,10 @@
 1. アーカイブファイルは以下を使用
   - jakarta.servlet.jsp.jstl-3.0.1.jar
   - jakarta.servlet.jsp.jstl-api-3.0.2.jar
+2. Taglibディレクティブのuri属性を以下に変更
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>TagLib</th>
+  </tr>
+</table>
