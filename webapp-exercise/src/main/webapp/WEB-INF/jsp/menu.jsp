@@ -36,10 +36,10 @@
 				<br>
 				<ul class="nav justify-content-center">
 					<li class="nav-item m-3"><a
-						href="<%=request.getContextPath()%>/deptlist"
+						href="<%=request.getContextPath()%>/department/list"
 						class="btn btn-primary btn-lg"> 部門一覧 </a></li>
 					<li class="nav-item m-3"><a
-						href="<%=request.getContextPath()%>/deptregistinput"
+						href="<%=request.getContextPath()%>/department/register?action=entry"
 						class="btn btn-primary btn-lg"> 部門登録 </a></li>
 				</ul>
 			</div>

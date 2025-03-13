@@ -29,13 +29,13 @@ public class InsertEmployeeService {
 				DepartmentDAO dao = new DepartmentDAO(connection);
 				deptList = dao.selectAll();
 				if (deptList.isEmpty()) {
-					throw new ServiceException("該当するデータはありません");
+					throw new ServiceException("該当するデータはありません。");
 				}
 			} catch (SQLException e) {
-				throw new ServiceException("取得失敗", e);
+				throw new ServiceException("データ取得ができませんでした。", e);
 			}
 		} catch (SQLException e) {
-			throw new ServiceException("DB処理エラー", e);
+			throw new ServiceException("データ取得ができませんでした。", e);
 		}
 		return deptList;
 	}
@@ -55,10 +55,10 @@ public class InsertEmployeeService {
 				employee = dao.selectByMailAddress(mailAddress);
 				return employee != null;
 			} catch (SQLException e) {
-				throw new ServiceException("取得失敗", e);
+				throw new ServiceException("データ取得ができませんでした。", e);
 			}
 		} catch (SQLException e) {
-			throw new ServiceException("DB処理エラー", e);
+			throw new ServiceException("データ取得ができませんでした。", e);
 		}
 	}
 	
@@ -76,10 +76,10 @@ public class InsertEmployeeService {
 				DepartmentDAO dao = new DepartmentDAO(connection);
 				department = dao.selectByDeptId(deptId);
 				if (department == null) {
-					throw new ServiceException("取得件数が0件でした");
+					throw new ServiceException("取得件数が0件でした。");
 				}
 			} catch (SQLException e) {
-				throw new ServiceException("取得失敗", e);
+				throw new ServiceException("データ取得ができませんでした。", e);
 			}
 		} catch (SQLException e) {
 			throw new ServiceException("DB処理エラー", e);
@@ -101,7 +101,7 @@ public class InsertEmployeeService {
 				c.commit();
 			} catch (SQLException e) {
 				c.rollback();
-				throw new ServiceException("更新失敗。ロールバックしました", e);
+				throw new ServiceException("更新失敗:ロールバックしました。", e);
 			}
 		} catch (SQLException e) {
 			throw new ServiceException("DB処理エラー", e);

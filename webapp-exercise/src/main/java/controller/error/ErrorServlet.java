@@ -22,7 +22,7 @@ public class ErrorServlet extends HttpServlet {
 	 * error.jspへフォワードする
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/jsp/error.jsp")
+		request.getRequestDispatcher("/WEB-INF/views/error.jsp")
 		.forward(request, response);
 	}
 

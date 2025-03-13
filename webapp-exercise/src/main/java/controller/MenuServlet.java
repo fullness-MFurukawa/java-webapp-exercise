@@ -21,13 +21,19 @@ public class MenuServlet extends HttpServlet {
 	 * メニュー画面を表示する
 	 */
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		HttpSession session = req.getSession(true);
-		String illegalOperationMsg = (String) session.getAttribute("illegalOperationMsg");
-		if (illegalOperationMsg != null) {
-			req.setAttribute("illegalOperationMsg", illegalOperationMsg);
-			session.removeAttribute("illegalOperationMsg");
-		}
-		req.getRequestDispatcher("WEB-INF/jsp/menu.jsp").forward(req, resp);
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+	throws ServletException, IOException {
+		HttpSession session = req.getSession(false); // セッションが存在しない場合は作成しない
+        if (session != null) {
+            String illegalOperationMsg = (String)session.getAttribute("illegalOperationMsg");
+            // セッションをすべてクリアする
+            session.invalidate();
+            // 再度セッションを取得（新しいセッションを作成）
+            session = req.getSession(true);
+            if (illegalOperationMsg != null) {
+                session.setAttribute("illegalOperationMsg", illegalOperationMsg);
+            }
+        }
+		req.getRequestDispatcher("/WEB-INF/views/menu.jsp").forward(req, resp);
 	}
 }
